@@ -203,12 +203,12 @@ print("\n\n")
 // виводимо інформацію про температуру тільки у Фаренгейт
 // для кожного міста, що є у масиві weatherInCities
 print("---------- ЕКРАН 3 ----------")
-for index in 0 ... weatherInCities.count {
-    let _ = index
-    let weatherInfo = weatherInCities[cityIndex]
+for index in 0 ..< weatherInCities.count {
+    
+    let weatherInfo = weatherInCities[index]
     let city = weatherInfo.0
     let kelvin = weatherInfo.1
-    print("\n\(city):\nt: \(String(format: "%.2f", kelvin)) F")
+    print("\n\(city):\nt: \(String(format: "%.2f", kelvinToFahrenheit(kelvin))) F")
 }
 print("\n-----------------------------")
 

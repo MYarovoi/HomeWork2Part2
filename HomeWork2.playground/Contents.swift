@@ -126,9 +126,10 @@ func kelvinToCelsius (_ kelvin: Double) -> Double {
     return celsius
 }
 
-func kelvinToFahrenheit (_ kelvin: Double) -> Double {
+func kelvinToFahrenheit (_ kelvin: Double) -> String {
     
-    let fahrenheit = (kelvin * (9.0/5.0) - 459.67).rounded()
+    let doubleFahrenheit = (kelvin * (9.0/5.0) - 459.67)
+    let fahrenheit = String(format: "%.1f", doubleFahrenheit)
     
     return fahrenheit
 }
@@ -208,7 +209,7 @@ for index in 0 ..< weatherInCities.count {
     let weatherInfo = weatherInCities[index]
     let city = weatherInfo.0
     let kelvin = weatherInfo.1
-    print("\n\(city):\nt: \(String(format: "%.2f", kelvinToFahrenheit(kelvin))) F")
+    print("\n\(city):\nt: \( kelvinToFahrenheit(kelvin)) F")
 }
 print("\n-----------------------------")
 
